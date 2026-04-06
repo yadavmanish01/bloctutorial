@@ -1,4 +1,8 @@
+import 'package:bloc_practice/switchandcontainer/switchcontainer_bloc.dart';
+import 'package:bloc_practice/switchandcontainer/switchcontainer_event.dart';
+import 'package:bloc_practice/switchandcontainer/switchcontainer_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../constant/sizedBoxExtension.dart';
 
@@ -20,16 +24,23 @@ class Switchandcontainerview extends StatelessWidget {
                   "Notification",
                   style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                 ),
-                Switch(value: true, onChanged: (value) {}),
+                BlocBuilder<SwitchcontainerBloc, SwitchcontainerState>(
+                  builder: (context, State){return Switch(value:State.isSwitch, onChanged: (value) {
+                    context.read<SwitchcontainerBloc>().add(OnorOffNotification());
+                  });}
+                ),
               ],
             ),
             50.ph,
             Container(
               height: MediaQuery.of(context).size.height * 0.2,
-              decoration: BoxDecoration(color:Colors.red,borderRadius: BorderRadius.circular(20)),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(20),
+              ),
             ),
             50.ph,
-            Slider(value: 0.85, onChanged:(value){})
+            Slider(value: 0.85, onChanged: (value) {}),
           ],
         ),
       ),

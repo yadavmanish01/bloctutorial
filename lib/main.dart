@@ -1,6 +1,7 @@
 import 'package:bloc_practice/config/routes/routes_name.dart';
 import 'package:bloc_practice/counter/counter_bloc.dart';
 import 'package:bloc_practice/counterview.dart';
+import 'package:bloc_practice/freezed/freezeview.dart';
 import 'package:bloc_practice/home.dart';
 import 'package:bloc_practice/switchandcontainer/switchcontainer_bloc.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: RoutesName.homePage,
         onGenerateRoute: Routes.generateRoute,
-        home: HomePage(),
+        // home: HomePage(),
+        home: Freezeview(),
       ),
     );
   }

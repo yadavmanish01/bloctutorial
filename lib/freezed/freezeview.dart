@@ -7,8 +7,8 @@ class Freezeview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //earlier passing data in constructor
-    PersonModel personModel = PersonModel(name: "Manish");
-    PersonModel personModel1 = PersonModel();
+    PersonMModel personModel = PersonMModel(name: "Manish");
+    PersonMModel personModel1 = PersonMModel();
     return Scaffold(
       body: Center(
         child: ElevatedButton(onPressed: () {
@@ -16,7 +16,7 @@ class Freezeview extends StatelessWidget {
            'name':'Manish Yadav'
          };
          //we can pass data like this now
-         PersonModel model = PersonModel.fromJson(data);
+         PersonMModel model = PersonMModel.fromJson(data);
          print(model.name.toString());
 
          //override existing value

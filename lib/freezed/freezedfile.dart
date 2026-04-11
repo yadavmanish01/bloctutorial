@@ -1,9 +1,9 @@
-class PersonModel{
+class PersonMModel{
   String? name;
-  PersonModel({this.name});
+  PersonMModel({this.name});
 
   //fromjson
-PersonModel.fromJson(Map<String,dynamic>json){
+PersonMModel.fromJson(Map<String,dynamic>json){
   name = json['name'];
 }
 
@@ -15,7 +15,14 @@ Map<String,dynamic>toJson(){
 }
 
 //copywith
-PersonModel copyWith({String? name}){
-return PersonModel(name: name??this.name);
+PersonMModel copyWith({String? name}){
+return PersonMModel(name: name??this.name);
+}
+
+//toString method
+//to print the value
+@override
+  String toString(){
+  return 'Person(first name: $name)';
 }
 }
